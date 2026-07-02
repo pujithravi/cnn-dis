@@ -73,8 +73,8 @@ pip install -r requirements.txt
 
 ## 👨‍💻 Author
 
-**Manjunadh Chowdary Kommineni**  
-- GitHub: https://github.com/ManjunadhChowdaryKommineni  
+**Ravi pujith**  
+- GitHub:https://github.com/pujithravi
 
 ---
 
