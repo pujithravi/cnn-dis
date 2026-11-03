@@ -39,17 +39,38 @@ The model is trained to identify different types of disasters from images such a
 
 ---
 
+## 🏗️ Model Architecture
 
+- Input: 128 × 128 × 3 RGB image (pixel values scaled to 0–1)
+- Conv2D (32, 3×3, ReLU) → MaxPooling (2×2)
+- Conv2D (64, 3×3, ReLU) → MaxPooling (2×2)
+- Conv2D (128, 3×3, ReLU) → MaxPooling (2×2)
+- Flatten → Dense (128, ReLU) → Dropout (0.5) → Dense (4, Softmax)
+- Loss: categorical cross-entropy · Optimizer: Adam (lr = 0.001)
+- About 3.3M trainable parameters
+
+## 📁 Project Structure
+
+```
+cnn-dis/
+├── app.py            # Streamlit app: upload an image and get a prediction
+├── model.h5          # Trained CNN model
+├── requirements.txt
+└── runtime.txt
+```
 
 ---
 
 ## ▶️ Installation
 
 ```bash
-git clone https://github.com/ManjunadhChowdaryKommineni/disaster-prediction-CNN
-cd disaster-prediction-CNN
+git clone https://github.com/pujithravi/cnn-dis
+cd cnn-dis
 pip install -r requirements.txt
+streamlit run app.py
 ```
+
+Upload a JPG/PNG image and the app predicts the disaster type.
 
 
 ---
@@ -66,7 +87,7 @@ pip install -r requirements.txt
 
 - 🔁 Use Transfer Learning (ResNet, VGG16)  
 - 📊 Improve dataset size and diversity  
-- 🌐 Deploy as web application  
+- 🎯 Show prediction confidence and a confusion matrix  
 - ⚡ Optimize model performance  
 
 ---
